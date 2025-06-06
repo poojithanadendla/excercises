@@ -1,0 +1,50 @@
+<p>Enter two numbers separated by a comma (like 3,5):</p>
+<input id="a" placeholder="3,5"><br><br>
+
+<p>Enter many numbers separated by commas (like 1,3,5,6,7,10):</p>
+<input id="l" placeholder="1,3,5,6,7,10" size="50"><br><br>
+
+<button onclick="calculateSum()">Calculate</button>
+
+<script>
+
+  function f5(a, l) {
+    let sum = 0;               
+    for (let i = 0; i < l.length; i++) {
+      if (l[i] % a[0] === 0 || l[i] % a[1] === 0) {
+        sum = sum + l[i];      
+      }
+    }
+    return sum;                
+  }
+
+  function calculateSum() {
+    
+    let aText = document.getElementById("a").value;
+    let lText = document.getElementById("l").value;
+
+    
+    let aArr = aText.split(","); 
+    let lArr = lText.split(",");
+
+    
+    for (let i = 0; i < aArr.length; i++) {
+      aArr[i] = Number(aArr[i]);
+    }
+    for (let i = 0; i < lArr.length; i++) {
+      lArr[i] = Number(lArr[i]);
+    }
+
+    
+    if (aArr.length !== 2) {
+      alert("Please enter exactly two numbers for 'a', separated by a comma.");
+      return;  
+    }
+
+    
+    let result = f5(aArr, lArr);
+
+    
+    alert("The sum of multiples is: " + result);
+  }
+</script>

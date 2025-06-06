@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h3>Enter numbers:</h3>
+  a: <input id="a"><br><br>
+  b: <input id="b"><br><br>
+  n: <input id="n"><br><br>
+
+  <button onclick="findSum()">Press Me</button>
+
+  <script>
+    function findSum() {
+      var a = Number(document.getElementById("a").value);
+      var b = Number(document.getElementById("b").value);
+      var n = Number(document.getElementById("n").value);
+      var sum = 0;
+
+      for (var i = 1; i < n; i++) {
+        if (i % a == 0 || i % b == 0) {
+          sum = sum + i;
+        }
+      }
+
+      alert("Sum is: " + sum);
+    }
+  </script>
+
+</body>
+</html>
